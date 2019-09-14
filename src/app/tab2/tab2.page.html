@@ -1,9 +1,20 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>
-      Tab Two
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content>
+  <ion-grid class="container">
+    <ion-row class="row start" >
+      <ion-col size="4" *ngFor="let badge of BADGES">
+        <div class="badge" (click)="open(badge)">
+          <ion-card class="badge-card">
+          <ion-card-content>
+              <img [src]="badge.url">
+          </ion-card-content>
+        </ion-card>
+            
+        </div>
+        
+      </ion-col>
 
-<ion-content></ion-content>
+
+
+    </ion-row>
+  </ion-grid>
+</ion-content>

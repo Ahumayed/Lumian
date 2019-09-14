@@ -1,5 +1,8 @@
 {
   "name": "Lumian",
-  "integrations": {},
+  "integrations": {
+    "cordova": {},
+    "capacitor": {}
+  },
   "type": "angular"
 }

@@ -1,0 +1,22 @@
+<ion-content >
+        <ion-grid class="container">
+          <ion-row>
+            <ion-col>
+                <ion-card>
+                    <ion-card-content>
+                        <img [src]="badge.url">
+                    </ion-card-content>
+                </ion-card>
+              <div class="margin"><span class="label">Badge Name:</span> {{badge.name}}</div>
+              <div><span class="label">Description:</span> {{badge.description}}</div>
+            </ion-col>
+      
+      
+      
+          </ion-row>
+        </ion-grid>
+      </ion-content>
+
+<ion-button (click)="close()">
+    Back
+</ion-button>

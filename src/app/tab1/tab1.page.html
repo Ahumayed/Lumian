@@ -1,41 +1,47 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>
-      Tab One
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content>
-    <ion-card class="welcome-card">
-      <img src="/assets/shapes.svg" alt="" />
-      <ion-card-header>
-        <ion-card-subtitle>Get Started</ion-card-subtitle>
-        <ion-card-title>Welcome to Ionic</ion-card-title>
-      </ion-card-header>
-      <ion-card-content>
-        <p>Now that your app has been created, you'll want to start building out features and components. Check out some of the resources below for next steps.</p>
-      </ion-card-content>
-    </ion-card>
-    <ion-list lines="none">
-      <ion-list-header>
-        <ion-label>Resources</ion-label>
-      </ion-list-header>
-      <ion-item href="https://ionicframework.com/docs/">
-        <ion-icon slot="start" color="medium" name="book"></ion-icon>
-        <ion-label>Ionic Documentation</ion-label>
-      </ion-item>
-      <ion-item href="https://ionicframework.com/docs/building/scaffolding">
-        <ion-icon slot="start" color="medium" name="build"></ion-icon>
-        <ion-label>Scaffold Out Your App</ion-label>
-      </ion-item>
-      <ion-item href="https://ionicframework.com/docs/layout/structure">
-        <ion-icon slot="start" color="medium" name="grid"></ion-icon>
-        <ion-label>Change Your App Layout</ion-label>
-      </ion-item>
-      <ion-item href="https://ionicframework.com/docs/theming/basics">
-        <ion-icon slot="start" color="medium" name="color-fill"></ion-icon>
-        <ion-label>Theme Your App</ion-label>
-      </ion-item>
-    </ion-list>
+  <ion-grid class="container">
+    
+      <ion-row size="6" justify-content-between class="start">
+        <ion-col size="4">
+          <div class="label">You</div>
+          <div class="grade">A</div>
+          <div class="label">Your Neighborhood</div>
+          <div class="grade">B</div>
+        </ion-col>
+        <ion-col size="4">
+          <div class="label">Your Balance</div>
+            <ion-chip class="chip" (click)="onClickPoints()">
+                <ion-label ><span class="points">{{4872}}</span>pts</ion-label>
+              </ion-chip>
+        </ion-col>
+      </ion-row>
+
+      <ion-row justify-content-center size="12" class="middle-row">
+        <ion-col align-self-center size="8">
+            <div>
+                <div>
+                    <ion-icon name="ios-information-circle" (click)="presentToast()" class="info"></ion-icon>
+                    <ion-row justify-content-center>
+                      <div class="plant">
+                          <ion-spinner *ngIf="!plant"></ion-spinner>
+                          <img *ngIf="plant" [src]="plant"> 
+                      </div>        
+                    </ion-row>
+                </div>
+                <div [ngClass]="[powerLevel, 'center', 'power', 'glow']">
+                  {{reading}} kW.h
+                </div>
+            </div>
+          
+        </ion-col>
+      </ion-row>
+
+      <ion-row justify-content-center>
+        <div class="center message">
+            What a beautiful Plant! <br/>Keep saving the world!
+        </div>
+      </ion-row>
+
+
+  </ion-grid>
 </ion-content>
